@@ -82,6 +82,27 @@
             </div>
         </div>
     </div>
+    <br>
+    
+    <div x-data="{open: false}">
+        <button x-on:click="open = !open" class="mt-1 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Presionar</button>
+        <button x-on:click="saludar()" class="mt-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Saludar</button>
+        <nav x-show="open">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </nav>
+    </div>
+    <br>
   </div>
 </div>
+
+<script>
+    function saludar(){
+        alert('Holaaaaaaaaaaaaaaaaaaaaaaaa');
+    }
+</script>
 
