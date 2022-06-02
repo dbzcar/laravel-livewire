@@ -36,7 +36,7 @@
                 </div>
             @endif
 
-            <livewire:users-table></livewire:users-table>
+            {{--<livewire:users-table></livewire:users-table>--}}
         </div>
     </body>
 </html>
