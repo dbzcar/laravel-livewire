@@ -9,8 +9,25 @@ use Livewire\WithPagination;
 class UsersTable extends Component
 {
     use WithPagination;
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'perPage' => ['except' => '5']
+    ];
+    public $search = "";
+    public $perPage = '5';
     public function render()
     {
-        return view('livewire.users-table', ['users' => User::paginate(10)])->layout('layouts.guest');
+        return view('livewire.users-table', [
+            'users' => User::where('name', 'LIKE', "%{$this->search}%")
+                ->orWhere('email', 'LIKE', "%{$this->search}%")
+                ->paginate($this->perPage)])
+                ->layout('layouts.guest');
+    }
+
+    public function clear()
+    {
+        $this->search = '';
+        $this->perPage = '5';
+        $this->page = 1;
     }
 }
