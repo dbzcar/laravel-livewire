@@ -30,7 +30,7 @@
                     </select>
                     
                     @if ($search !== '')
-                      <button wire:click="clear" class=" ml-4 items-center px-4 py-2 bg-red-400 border border-transparent rounded-md text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">X</button>      
+                      <button wire:click="clear" class=" ml-4 mt-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>      
                     @endif                                
                   </div>
                   @if($users->count())
@@ -84,3 +84,4 @@
     </div>
   </div>
 </div>
+
